@@ -5,6 +5,7 @@ on:
     inputs:
       build-root-directory:
         required: false
+        type: string
 
 jobs:
   callable-generate-and-submit-dependency-graph:
