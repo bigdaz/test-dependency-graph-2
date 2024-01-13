@@ -12,7 +12,6 @@ runs:
         dependency-graph: generate-and-submit
         build-root-directory: ${{ inputs.build-root-directory }}
         arguments: |
-          --no-configuration-cache
           --no-configure-on-demand
           --dependency-verification=off
           :ForceDependencyResolutionPlugin_resolveAllDependencies
