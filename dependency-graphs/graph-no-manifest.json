@@ -1,0 +1,16 @@
+{
+  "version" : 0,
+  "job" : {
+    "id" : "1",
+    "correlator" : "TEST_CORRELATOR"
+  },
+  "sha" : "73267bdbdf2a1bb84e81f075338387ceb5335d6a",
+  "ref" : "refs/heads/main",
+  "detector" : {
+    "name" : "GitHub Dependency Graph Gradle Plugin",
+    "version" : "1.0.0",
+    "url" : "https://github.com/gradle/github-dependency-graph-gradle-plugin"
+  },
+  "manifests" : {},
+  "scanned" : "NOW"
+}
