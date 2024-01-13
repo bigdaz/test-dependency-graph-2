@@ -1,4 +1,4 @@
-name: Generate and submit dependency graph
+name: Reusable workflow generate and submit dependency graph
 
 on:
   workflow_dispatch:
