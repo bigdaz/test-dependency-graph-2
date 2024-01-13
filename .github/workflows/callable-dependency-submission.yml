@@ -1,0 +1,18 @@
+name: Resusable workflow for dependency submission
+
+on:
+  workflow_call:
+
+jobs:
+  callable-generate-and-submit-dependency-graph:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: gradle/gradle-build-action@v3-beta
+      with:
+        dependency-graph: generate-and-submit
+        arguments: |
+          --no-configuration-cache
+          --no-configure-on-demand
+          --dependency-verification=off
+          :ForceDependencyResolutionPlugin_resolveAllDependencies

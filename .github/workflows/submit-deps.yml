@@ -8,15 +8,5 @@ permissions:
   contents: write
 
 jobs:
-  generate-and-submit-dependency-graph:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: gradle/gradle-build-action@v3-beta
-      with:
-        dependency-graph: generate-and-submit
-        arguments: |
-          --no-configuration-cache
-          --no-configure-on-demand
-          --dependency-verification=off
-          :ForceDependencyResolutionPlugin_resolveAllDependencies
+  call-generate-and-submit-dependency-graph:
+    uses: ./.github/workflows/callable-dependency-submission.yml
