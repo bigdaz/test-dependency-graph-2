@@ -17,4 +17,5 @@ runs:
         arguments: |
           --no-configure-on-demand
           --dependency-verification=off
+          --stacktrace
           :ForceDependencyResolutionPlugin_resolveAllDependencies
