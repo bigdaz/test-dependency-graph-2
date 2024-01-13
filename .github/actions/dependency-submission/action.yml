@@ -12,6 +12,7 @@ runs:
     - uses: gradle/gradle-build-action@main
       with:
         dependency-graph: generate-and-submit
+        dependency-graph-continue-on-failure: false
         build-root-directory: ${{ inputs.build-root-directory }}
         cache-encryption-key: ${{ inputs.cache-encryption-key }}
         arguments: |
