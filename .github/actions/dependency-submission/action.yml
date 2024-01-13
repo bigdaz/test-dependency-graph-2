@@ -1,6 +1,8 @@
 name: 'Gradle Dependency Submission'
 
 inputs:
+  gradle-version:
+    required: false
   build-root-directory:
     required: false
   cache-encryption-key:
@@ -13,6 +15,7 @@ runs:
       with:
         dependency-graph: generate-and-submit
         dependency-graph-continue-on-failure: false
+        gradle-version: ${{ inputs.gradle-version }}
         build-root-directory: ${{ inputs.build-root-directory }}
         cache-encryption-key: ${{ inputs.cache-encryption-key }}
         arguments: |
