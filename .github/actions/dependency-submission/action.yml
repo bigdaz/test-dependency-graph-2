@@ -1,0 +1,13 @@
+name: 'Gradle Dependency Submission'
+
+runs:
+  using: "composite"
+  steps:
+    - uses: gradle/gradle-build-action@v3-beta
+      with:
+        dependency-graph: generate-and-submit
+        arguments: |
+          --no-configuration-cache
+          --no-configure-on-demand
+          --dependency-verification=off
+          :ForceDependencyResolutionPlugin_resolveAllDependencies
