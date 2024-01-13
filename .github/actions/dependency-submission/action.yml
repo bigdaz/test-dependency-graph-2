@@ -3,6 +3,8 @@ name: 'Gradle Dependency Submission'
 inputs:
   build-root-directory:
     required: false
+  cache-encryption-key:
+    required: false
 
 runs:
   using: "composite"
@@ -11,6 +13,7 @@ runs:
       with:
         dependency-graph: generate-and-submit
         build-root-directory: ${{ inputs.build-root-directory }}
+        cache-encryption-key: ${{ inputs.cache-encryption-key }}
         arguments: |
           --no-configure-on-demand
           --dependency-verification=off
