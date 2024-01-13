@@ -1,11 +1,16 @@
 name: 'Gradle Dependency Submission'
 
+inputs:
+  build-root-directory:
+    required: false
+
 runs:
   using: "composite"
   steps:
     - uses: gradle/gradle-build-action@v3-beta
       with:
         dependency-graph: generate-and-submit
+        build-root-directory: ${{ inputs.build-root-directory }}
         arguments: |
           --no-configuration-cache
           --no-configure-on-demand

@@ -2,6 +2,9 @@ name: Resusable workflow for dependency submission
 
 on:
   workflow_call:
+    inputs:
+      build-root-directory:
+        required: false
 
 jobs:
   callable-generate-and-submit-dependency-graph:
@@ -11,6 +14,7 @@ jobs:
     - uses: gradle/gradle-build-action@v3-beta
       with:
         dependency-graph: generate-and-submit
+        build-root-directory: ${{ inputs.build-root-directory }}
         arguments: |
           --no-configuration-cache
           --no-configure-on-demand
